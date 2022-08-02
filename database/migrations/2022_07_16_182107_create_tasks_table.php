@@ -24,6 +24,7 @@ class CreateTasksTable extends Migration
       $table->foreignId('label_id')->nullable()->constrained()->cascadeOnDelete();
       $table->foreignId('leader_id')->nullable()->constrained('employees', 'id')->cascadeOnDelete();
       $table->foreignId('employee_id')->nullable()->constrained()->cascadeOnDelete();
+      $table->foreignId('department_id')->nullable()->constrained()->cascadeOnDelete();
       $table->foreignId('task_type_id')->constrained()->cascadeOnDelete();
       $table->date('due_date');
       $table->date('expire_date');
