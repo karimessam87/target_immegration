@@ -29,7 +29,7 @@ class CreateClientEducationTable extends Migration
       $table->string('university');
       $table->string('field');
       $table->foreignId('client_id')->constrained()->cascadeOnDelete();
-      $table->foreignId('task_id')->nullable()->constrained()->cascadeOnDelete();
+
       $table->foreignId('flag_id')->nullable()->constrained()->cascadeOnDelete();
 
       $table->timestamps();
