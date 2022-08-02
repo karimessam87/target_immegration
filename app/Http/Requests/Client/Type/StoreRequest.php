@@ -27,7 +27,7 @@ class StoreRequest extends FormRequest
       'name' => ['required', 'min:3', 'max:255'],
       'description' => ['required', 'min:3', 'max:255'],
       'color' => ['required', 'min:3', 'max:10'],
-      'label' => ['required', 'max:100'],
+      'status' => ['required', 'boolean'],
 
     ];
   }
