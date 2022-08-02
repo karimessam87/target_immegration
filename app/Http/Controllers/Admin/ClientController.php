@@ -204,7 +204,7 @@ class ClientController extends Controller
 
     if ($request->hasFile('file')) {
       $attributes['file'] = (new Mediaable($request))
-        ->moveToDir('clients/documents' . date("Y-m-d") . '/' . $client->firstname) // Directory
+        ->moveToDir('clients/documents/' . date("Y-m-d") . '/' . $client->firstname) // Directory
         ->getMediaFromRequestByName('file') // InputName
         ->getMediaNameAfterUpload(); // To Upload
     }
@@ -234,11 +234,11 @@ class ClientController extends Controller
 
     if ($request->hasFile('certificate') || $request->hasFile('credential_report')) {
       $attributes['certificate'] = (new Mediaable($request))
-        ->moveToDir('clients/documents' . date("Y-m-d") . '/' . $client->firstname . '/education') // Directory
+        ->moveToDir('clients/documents/' . date("Y-m-d") . '/' . $client->firstname . '/education') // Directory
         ->getMediaFromRequestByName('certificate') // InputName
         ->getMediaNameAfterUpload(); // To Upload
       $attributes['credential_report'] = (new Mediaable($request))
-        ->moveToDir('clients/documents' . date("Y-m-d") . '/' . $client->firstname . '/education') // Directory
+        ->moveToDir('clients/documents/' . date("Y-m-d") . '/' . $client->firstname . '/education') // Directory
         ->getMediaFromRequestByName('credential_report') // InputName
         ->getMediaNameAfterUpload(); // To Upload
     }
